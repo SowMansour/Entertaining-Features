@@ -28,13 +28,36 @@ body{
     align-items: center;
     background-color: #1e2337; 
 }
-
 .titre{
-    color: blueviolet;
-    font-weight: bold;
-    font-size: 6em;
-    text-decoration: line-through;
-
+    font-size: 3em;
+    margin: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: white;
+    color: rgb(236, 13, 13);
+    font-weight: bolder;
+}
+iframe{
+    width: 60em;
+    height: 30em;
+}
+.blc-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3rem;
+}
+.btn{
+    padding: 1rem;
+    background-color: #b5b5b5;
+    border: none;
+    color: #1e2337;
+}
+.btn-happy{
+    color: #f1bf2a;
+}
+.subscriber{
+    background-color: rgb(124, 201, 8);
 }
 .footer{
     position: fixed;

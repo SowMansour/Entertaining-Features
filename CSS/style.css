@@ -1,0 +1,75 @@
+/* On utilise le selecteur universel * pour réinitialiser le navigateur*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/*Par défaut la valeur est de 100%(1rem = 16px) mais pour simplifier la conversion en 
+modifiant la valeur de référence pour qu'elle conrresponde à 10px.
+Comment? --> en faisant un produit en croix --> (100% * 10px) / 16px */
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.4rem; /* Soit 14px */
+    font-family: Arial;
+    color: white;
+}
+
+
+.container{
+/* VH(viewport Height) varie en fonction de la hauteur de la fenetre ouverte*/
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e2337; 
+}
+
+.titre{
+    color: blueviolet;
+    font-weight: bold;
+    font-size: 6em;
+    text-decoration: line-through;
+
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Nécessaire de préciser une width si position fixed*/
+    background-color: rgb(199, 197, 197);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 3rem;
+    opacity: 1; /* Modification de cette valeur en JS*/
+    transition: 1.5s;
+}
+.cookies-texte{
+    text-transform: uppercase;
+    font-size: 1.2em;
+    text-align: center;
+}
+.btn-cookies{
+    display: flex;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.btn-common-style{
+    color: white;
+    padding: 1.3rem;
+    text-transform: uppercase;
+}
+.accept-cookies{
+    background-color: rgb(139, 223, 139);
+   
+}
+.deny-cookies{
+    background-color: grey;
+}

@@ -17,19 +17,77 @@ body{
     font-family: Arial;
     color: white;
 }
-
-
 .container{
-/* VH(viewport Height) varie en fonction de la hauteur de la fenetre ouverte*/
+    /* VH(viewport Height) varie en fonction de la hauteur de la fenetre ouverte*/
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: #1e2337; 
+    }
+/* Modale de la Promotion 50% vient au dessus de tous les autres selecteurs*/
+.modal-container{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(136, 222, 136, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modal-details{
+    background-color: white;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    padding: 3rem;
+    color: #1E2337;
+}
+.modal-details i{
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    font-size: 2rem;
+    padding: 1rem;
+    color: grey;
+}
+.modal-titre {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.code{
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    padding: 1rem;
+    display: none;
+}
+
+.btn-success{
+    height: 4rem;
+    background-color: rgb(231, 171, 61);
+    color: white;
+    padding: 1rem;
+    border: none;
+    width: 100%;
+}
+
+.bloc-central{
     height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #1e2337; 
+    
 }
+/*SECTION YOUTUBE BUTTONS*/
 .titre{
-    font-size: 3em;
+    font-size: 4.1em;
     margin: 0.5em;
     text-align: center;
     text-transform: uppercase;
@@ -59,7 +117,25 @@ iframe{
 .subscriber{
     background-color: rgb(124, 201, 8);
 }
-.footer{
+.part2{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+}
+.part3{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: orangered;
+}
+
+/*SECTION COOKIES*/
+.cookie{
     position: fixed;
     bottom: 0;
     left: 0;

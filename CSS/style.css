@@ -25,7 +25,7 @@ body{
         justify-content: center;
         flex-direction: column;
         align-items: stretch;
-        background-color: #1e2337; 
+        background-color: #2c3c54; 
     }
 
 /* Modale de la Promotion 50% vient au dessus de tous les autres selecteurs*/
@@ -85,9 +85,51 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center;  
 }
+/* Dark & Ligth Mode*/
+.switch{
+    position: fixed;
+    top: 9px;
+    right: 70px;
+    font-size: 3rem;
+    width: 90px;
+    height: 30px;
+    background-color: #1e2939;
+    border-radius: 15px;
+    border: 1px solid #1e2939;
+    padding: 1rem;
+}
+.switch-btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+.switch i {
+    position: absolute;
+    color: #ffd363;
+    top: 0px;
+    right: 23px;
+}
+.switch-btn-change {
+    right: -1px;
+    left: auto;
+}
+.switch-icone-change{
+    left: 20px;
+}
+.switch-change{
+    background-color: #61b3ff;
+    border: 1px solid white;
+}
+.container-change {
+    background-color: #61b3ff;
+}
+
 /* Burger Menu*/
 .navbar-desktop {
     font-size: 5rem;
@@ -176,7 +218,10 @@ iframe{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    background-color: #7290bd;
+}
+.part2-change {
+    background-color: #61b3ff;
 }
 .part3{
     height: 100vh;
@@ -184,7 +229,10 @@ iframe{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: orangered;
+    background-color: #aecaf5;
+}
+.part3-change {
+    background-color: #61b3ff;
 }
 
 /*SECTION COOKIES*/

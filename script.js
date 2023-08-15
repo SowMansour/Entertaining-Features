@@ -91,3 +91,24 @@ const menuBurger = () => {
   });
 };
 menuBurger();
+
+const switchBox = document.querySelector('.switch');
+const switchBtn = document.querySelector('.switch-btn');
+const iconeBtn = document.querySelector('.switch i');
+const container = document.querySelector('.container');
+const section2 = document.querySelector('.part2');
+const section3 = document.querySelector('.part3');
+
+switchBox.addEventListener('click', ()=>{
+  switchBtn.classList.toggle('switch-btn-change'); //On se met pas de . quand la creation de class se fait en js
+  iconeBtn.classList.toggle('switch-icone-change');
+  iconeBtn.classList.toggle('fa-sun');
+  switchBox.classList.toggle('switch-change');
+  container.classList.toggle('container-change');
+  section2.classList.toggle('part2-change');
+  section3.classList.toggle('part3-change');
+
+
+
+});
+

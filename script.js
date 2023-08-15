@@ -26,7 +26,7 @@ bannerFeature();
  * et du bouton subscribe au clic
  */
 const youtubeFeature = () => {
-  const emoji = document.querySelector('i');
+  const emoji = document.querySelector('.blc-btn .fa.fa-meh-blank');
 
   emoji.addEventListener('click', () => {
     emoji.classList.toggle('fa-smile-wink');
@@ -48,32 +48,46 @@ const youtubeFeature = () => {
 
 youtubeFeature();
 
+const scrollingFeature = () => {
 // Step 1: Je selectionne et stock les éléments nécessaire
-const modal= document.querySelector('.modal-container');
+  const modal= document.querySelector('.modal-container');
 
-const btn = document.querySelector('.btn-success');
+  const btn = document.querySelector('.btn-success');
 
-const code = document.querySelector('.code');
+  const code = document.querySelector('.code');
 
-const icone = document.querySelector('.fa-times');
+  const icone = document.querySelector('.fa-times');
 
-//Step 3: Je les soumets aux évements
+  //Step 3: Je les soumets aux évements
 
-window.addEventListener('scroll', displayModal);
-function displayModal(){
-  const hauteur = document.documentElement.scrollTop;
-  if(hauteur > 640){
-    modal.style.display = 'flex'; /**display passe de none à flex(cf:modal-container) */
+  window.addEventListener('scroll', displayModal);
+  function displayModal(){
+    const hauteur = document.documentElement.scrollTop;
+    if(hauteur > 640){
+      modal.style.display = 'flex'; /**display passe de none à flex(cf:modal-container) */
+    }
   }
-}
 
-btn.addEventListener('click', () => {
-  code.style.display = 'block'; //visible
-  btn.style.display = 'none'; //invisible
-});
+  btn.addEventListener('click', () => {
+    code.style.display = 'block'; //visible
+    btn.style.display = 'none'; //invisible
+  });
 
-icone.addEventListener('click', () => {
-  modal.style.display = 'none';
-  window.removeEventListener('scroll', displayModal);
-});
+  icone.addEventListener('click', () => {
+    modal.style.display = 'none';
+    window.removeEventListener('scroll', displayModal);
+  });
+};
+scrollingFeature();
 
+const menuBurger = () => {
+  const iconeBurger = document.querySelector('.navbar-mobile i');
+
+  const modalBurger = document.querySelector('.modal');
+  console.log(modalBurger);
+  iconeBurger.addEventListener('click', ()=>{
+    modalBurger.classList.toggle('change-modal'); 
+    iconeBurger.classList.toggle('fa-times');
+  });
+};
+menuBurger();

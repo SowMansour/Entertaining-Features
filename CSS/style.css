@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Raleway:wght@100&display=swap');
+
 /* On utilise le selecteur universel * pour réinitialiser le navigateur*/
 *{
     margin: 0;
@@ -14,7 +16,7 @@ html{
 
 body{
     font-size: 1.4rem; /* Soit 14px */
-    font-family: Arial;
+    font-family: 'Quicksand sans-serif';
     color: white;
 }
 .container{
@@ -25,6 +27,7 @@ body{
         align-items: stretch;
         background-color: #1e2337; 
     }
+
 /* Modale de la Promotion 50% vient au dessus de tous les autres selecteurs*/
 .modal-container{
     height: 100vh;
@@ -61,8 +64,8 @@ body{
 }
 
 .code{
-    background-color: black;
-    color: white;
+    background-color: aqua;
+    color: black;
     font-family: monospace;
     padding: 1rem;
     display: none;
@@ -85,29 +88,79 @@ body{
     align-items: center;
     
 }
-/*SECTION YOUTUBE BUTTONS*/
-.titre{
-    font-size: 4.1em;
-    margin: 0.5em;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: white;
-    color: rgb(236, 13, 13);
-    font-weight: bolder;
+/* Burger Menu*/
+.navbar-desktop {
+    font-size: 5rem;
+    font-weight: 800;
+    padding: 3rem;
+    height: 8rem;
+    line-height: 8rem; /*centre verticalement*/
+    text-align: center; /* Centre horizontalement*/
 }
+.navbar-desktop a { /* ajuster l'espace entre les liens*/
+    padding: 3rem;
+    color: white;
+}
+
+.navbar-mobile i{
+    position: fixed;
+    z-index: 9999;
+    top: 9px;
+    right: 15px;
+    font-size: 3rem;
+    color: white;
+}
+
+.modal{
+    background-color: aqua;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    opacity: 0.9;
+    transition: top 0.9s;
+}
+.navbar-mobile .navbar-mobile-list {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-mobile .navbar-mobile-list a{
+    font-size: 5rem;
+    font-weight: 800;
+    color: #1e2337;
+    padding: 2rem;
+}
+
+.navbar-mobile{ /*Display None pour l'aternance puisse se faire avec le média querie en bas*/
+    display: none;
+}
+.change-modal {
+    top: 0;
+}
+
+/*SECTION YOUTUBE BUTTONS*/
 iframe{
     width: 60em;
     height: 30em;
 }
 .blc-btn{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
+    background-color: rgb(197, 240, 240);
+    top: 1rem;
+    left: 35rem;
     font-size: 3rem;
+    box-sizing: 4rem;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
 }
 .btn{
     padding: 1rem;
-    background-color: #b5b5b5;
+    background-color: #c5c1c1;
     border: none;
     color: #1e2337;
 }
@@ -172,3 +225,24 @@ iframe{
 .deny-cookies{
     background-color: grey;
 }
+
+/* Mobiles first */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    /* Styles pour les tablettes */
+    .navbar-mobile{
+        display: block;
+    }
+  }
+  
+  @media screen and (min-width: 767px) and (max-width: 1200px) {
+    /* Tablettes*/
+    .navbar-mobile{
+        display: block;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    /* Ordinateurs de bureau */
+    .navbar-desktop{
+        display: block;
+    }
+  }

@@ -92,23 +92,39 @@ const menuBurger = () => {
 };
 menuBurger();
 
-const switchBox = document.querySelector('.switch');
-const switchBtn = document.querySelector('.switch-btn');
-const iconeBtn = document.querySelector('.switch i');
-const container = document.querySelector('.container');
-const section2 = document.querySelector('.part2');
-const section3 = document.querySelector('.part3');
+const darkModeFeat = () => {
+  const switchBox = document.querySelector('.switch');
+  const switchBtn = document.querySelector('.switch-btn');
+  const iconeBtn = document.querySelector('.switch i');
+  const container = document.querySelector('.container');
+  const section2 = document.querySelector('.part2');
+  const section3 = document.querySelector('.accordeon');
 
-switchBox.addEventListener('click', ()=>{
-  switchBtn.classList.toggle('switch-btn-change'); //On se met pas de . quand la creation de class se fait en js
-  iconeBtn.classList.toggle('switch-icone-change');
-  iconeBtn.classList.toggle('fa-sun');
-  switchBox.classList.toggle('switch-change');
-  container.classList.toggle('container-change');
-  section2.classList.toggle('part2-change');
-  section3.classList.toggle('part3-change');
+  switchBox.addEventListener('click', ()=>{
+    switchBtn.classList.toggle('switch-btn-change'); //On se met pas de . quand la creation de class se fait en js
+    iconeBtn.classList.toggle('switch-icone-change');
+    iconeBtn.classList.toggle('fa-sun');
+    switchBox.classList.toggle('switch-change');
+    container.classList.toggle('container-change');
+    section2.classList.toggle('part2-change');
+    section3.classList.toggle('accordeon-change');
+  });
+};
+darkModeFeat();
 
+const accordeonFaq = ()=>{
+  const questionFaq = document.querySelectorAll('.question');
+  console.log(questionFaq);
 
+  questionFaq.forEach(question => {
+    question.addEventListener('click', ()=>{
+      const reponse = question.nextElementSibling;
+      reponse.classList.toggle('visible');
 
-});
+      const icone = question.lastElementChild;
+      icone.classList.toggle('fa-chevron-up');
+    });
+  });
+};
 
+accordeonFaq();

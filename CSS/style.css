@@ -90,7 +90,7 @@ body{
 /* Dark & Ligth Mode*/
 .switch{
     position: fixed;
-    top: 9px;
+    top: 1.3rem;
     right: 70px;
     font-size: 3rem;
     width: 90px;
@@ -132,8 +132,11 @@ body{
 
 /* Burger Menu*/
 .navbar-desktop {
-    font-size: 5rem;
-    font-weight: 800;
+    position: relative;
+    top: -4rem;
+    width: 90%;
+    font-size: 3rem;
+    font-weight: bold;
     padding: 3rem;
     height: 8rem;
     line-height: 8rem; /*centre verticalement*/
@@ -147,7 +150,7 @@ body{
 .navbar-mobile i{
     position: fixed;
     z-index: 9999;
-    top: 9px;
+    top: 1.3rem;
     right: 15px;
     font-size: 3rem;
     color: white;
@@ -223,18 +226,45 @@ iframe{
 .part2-change {
     background-color: #61b3ff;
 }
-.part3{
+/* SECTION ACCORDEON FAQ*/
+.accordeon{
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 8rem; /*centre verticalement*/
+    text-align: center; /* Centre horizontalement*/
     height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
     background-color: #aecaf5;
 }
-.part3-change {
+.accordeon-change {
     background-color: #61b3ff;
 }
+.question{
+    width: 80%;
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid #777;
 
+}
+
+.reponse{
+    line-height: 3rem;
+    font-size: 2rem;
+    color: black;
+    background-color: #eee;
+    padding: 3rem;
+    display: none; 
+}
+.visible{
+    display: block; /* le display de visible et réponse font l'alternace*/
+}
 /*SECTION COOKIES*/
 .cookie{
     position: fixed;
@@ -281,12 +311,18 @@ iframe{
         display: block;
     }
   }
+  .navbar-desktop{
+    display: none;
+  }
   
   @media screen and (min-width: 767px) and (max-width: 1200px) {
     /* Tablettes*/
     .navbar-mobile{
         display: block;
     }
+  }
+  .navbar-desktop{
+    display: none;
   }
   @media screen and (min-width: 1200px) {
     /* Ordinateurs de bureau */

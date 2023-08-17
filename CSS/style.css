@@ -81,7 +81,9 @@ body{
 }
 
 .bloc-central{
-    height: 100vh;
+    width: 50%;
+    margin: 5rem;
+    padding: 5rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -215,16 +217,59 @@ iframe{
 .subscriber{
     background-color: rgb(124, 201, 8);
 }
-.part2{
-    height: 100vh;
+/* SECTION FICHE PRODUIT*/
+.product-container{
+    width: 100%;
+    color: grey;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #7290bd;
+    background-color: white;
 }
-.part2-change {
-    background-color: #61b3ff;
+
+.product-images{
+    flex: 1;
+}
+.product-infos{
+    flex: 1;
+    padding: 2rem;
+}
+#full{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.vignettes-container{
+    display: flex;
+}
+.small{
+    flex: 1;
+    width: 30%;
+    margin: 1rem;
+}
+.product-infos{
+    display: flex;
+}
+h1.product-titre{
+    font-size: 4rem;
+    text-decoration: underline;
+    font-style: oblique;
+
+}
+p.product-price{
+    font-size: 3rem;
+    margin: 2rem 0;
+    
+}
+p.description{
+    font-size: 2rem;
+}
+button.btn-add{
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    outline: none;
+    border: none;
+    margin: 2rem 0;
+
 }
 /* SECTION ACCORDEON FAQ*/
 .accordeon{
@@ -232,12 +277,12 @@ iframe{
     font-weight: bold;
     line-height: 8rem; /*centre verticalement*/
     text-align: center; /* Centre horizontalement*/
-    height: 100vh;
+    margin: 5rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 4rem;
     background-color: #aecaf5;
 }
 .accordeon-change {
@@ -253,7 +298,6 @@ iframe{
     border-bottom: 1px solid #777;
 
 }
-
 .reponse{
     line-height: 3rem;
     font-size: 2rem;
@@ -304,29 +348,92 @@ iframe{
     background-color: grey;
 }
 
-/* Mobiles first */
-@media screen and (min-width: 480px) and (max-width: 767px) {
-    /* Styles pour les tablettes */
-    .navbar-mobile{
-        display: block;
-    }
-  }
-  .navbar-desktop{
+
+  /* Mobiles first */
+.navbar-desktop {
     display: none;
-  }
-  
-  @media screen and (min-width: 767px) and (max-width: 1200px) {
-    /* Tablettes*/
-    .navbar-mobile{
+}
+
+.navbar-mobile {
+    display: block;
+}
+
+.container {
+    height: auto;
+}
+
+.product-container {
+    flex-direction: column;
+}
+.vignettes-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+}
+
+.small {
+    width: 50%;
+}
+.product-infos{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+/* Tablettes et Ordinateurs de bureau */
+@media screen and (min-width: 800px) {
+    .navbar-mobile {
         display: block;
     }
-  }
-  .navbar-desktop{
-    display: none;
-  }
-  @media screen and (min-width: 1200px) {
-    /* Ordinateurs de bureau */
-    .navbar-desktop{
+
+    .navbar-desktop {
+        display: none;
+    }
+    .bloc-central{
+        width: 100%;
+        margin: 1rem;
+        padding: 3rem;
+    }
+    .product-container {
+        flex-direction: row;
+        width: 80%;
+    }
+    .product-images{
+    flex: 2;
+}
+    .vignettes-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: normal; 
+        padding-top: 1rem;
+    }
+    #full{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        padding: 1rem;
+     
+    }
+    .product-infos{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .navbar-desktop {
         display: block;
     }
-  }
+    .navbar-mobile {
+        display: none;
+    }
+    .vignettes-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: normal; 
+        padding-top: 1rem;
+    }
+}

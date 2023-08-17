@@ -97,7 +97,6 @@ const darkModeFeat = () => {
   const switchBtn = document.querySelector('.switch-btn');
   const iconeBtn = document.querySelector('.switch i');
   const container = document.querySelector('.container');
-  const section2 = document.querySelector('.part2');
   const section3 = document.querySelector('.accordeon');
 
   switchBox.addEventListener('click', ()=>{
@@ -106,15 +105,13 @@ const darkModeFeat = () => {
     iconeBtn.classList.toggle('fa-sun');
     switchBox.classList.toggle('switch-change');
     container.classList.toggle('container-change');
-    section2.classList.toggle('part2-change');
-    section3.classList.toggle('accordeon-change');
+    section3.classList.toggle('accordeon-change'); //Permet d'appliquer le dark-mode à l'interieur d'une div enfant
   });
 };
 darkModeFeat();
 
 const accordeonFaq = ()=>{
   const questionFaq = document.querySelectorAll('.question');
-  console.log(questionFaq);
 
   questionFaq.forEach(question => {
     question.addEventListener('click', ()=>{
@@ -128,3 +125,35 @@ const accordeonFaq = ()=>{
 };
 
 accordeonFaq();
+
+const ficheProduit = () => { 
+//IMG source
+  const vignettes = document.querySelectorAll('.small');
+  //IMG cible
+  const fullImg = document.getElementById('full');
+  const btnCart = document.querySelector('button.btn-add');
+  let cart = 0;
+  //slection de la balise vide pour la dynamiser en js avc un message
+  const cartMessage = document.querySelector('.cart-container');
+
+  vignettes.forEach(item => {
+    item.addEventListener('click', ()=>{
+    //retrieve img source
+      let imgSource = item.getAttribute('src');
+
+      //Je place la vignette dans l'elem cible
+      fullImg.setAttribute('src', imgSource);
+    });
+  });
+
+  btnCart.addEventListener('click', ()=>{
+    cart++;
+    if(cart < 2){
+      cartMessage.innerText = `Vous avez ${cart} produit dans votre panier `;
+    } else{
+      cartMessage.innerText = `Vous avez ${cart} produits dans votre panier `;
+    }
+  });
+};
+
+ficheProduit();

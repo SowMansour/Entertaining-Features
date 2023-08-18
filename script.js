@@ -155,5 +155,60 @@ const ficheProduit = () => {
     }
   });
 };
-
 ficheProduit();
+
+const formFeat = ()=>{
+  const form = document.getElementById('formulaire');
+  const prenom = document.getElementById('prenom');
+  const nom = document.getElementById('nom');
+  const email = document.getElementById('email');
+  const message = document.getElementById('message');
+  //Gestion des erreurs
+  const msgError = document.querySelectorAll('.error');
+  //Creation du message de succès
+  const succesMess = document.getElementById('titre-form');
+  const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault(); //astuce pour pas raffraichier la page, le navigateur a le controle
+    console.log('sent'); //Rien ne s'affiche si on omet la methode preventDefault
+  
+    const prenomValue = prenom.value.trim();
+    console.log(prenomValue);
+    const nomValue = nom.value.trim();
+    console.log(nomValue); //trim() supprime les espaces avant et après le mot
+    const emailValue = email.value.trim();
+    console.log(emailValue);
+    const messageValue = message.value.trim();
+    console.log(messageValue);
+ 
+    //Améliration de l'UI: reset =>les messages d'erreurs sont invisibles
+    msgError.forEach(error =>{
+      error.classList.add('invisibleMess');
+    });
+
+    //verification des infos saisies par le user
+    if(prenomValue.length < 2 || prenomValue.length > 10){
+      console.log('erreur prenom');
+      prenom.nextElementSibling.classList.remove('invisibleMess');
+    } else if (nomValue.length < 3 || nomValue.length > 15){
+      console.log('erreur nom');
+      nom.nextElementSibling.classList.remove('invisibleMess');
+    } else if(messageValue.length < 10 || messageValue.length > 100){
+      console.log('erreur message');
+      message.nextElementSibling.classList.remove('invisibleMess');
+    } else if(!regexMail.test(emailValue)){
+      console.log('erreur sur le mail');
+      email.nextElementSibling.innerText = 'Adresse e-mail invalide';
+      email.nextElementSibling.classList.remove('invisibleMess');
+    } else{
+      succesMess.innerText = 'Votre demande est en cours de traitement !';
+      succesMess.classList.add('MessSucces');
+      console.log(succesMess);
+      form.remove(); //suppression du form une fois que succesMess s'affiche
+    }
+
+  });
+};
+formFeat();
+
